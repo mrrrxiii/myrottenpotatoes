@@ -1,0 +1,21 @@
+!!! 5
+%html
+  %head
+    %title RottenPotatoes!!
+    = stylesheet_link_tag 'application'
+    = javascript_pack_tag 'application'
+    = csrf_meta_tags
+
+  %body
+    %h2 Thank you for visiting my page 
+    %h2 This is Lei, looking for a co-op position based in Ottawa starting in 2020 Fall
+    %a{href:"https://afternoon-river-68125.herokuapp.com"} Another web app of mine
+    %h1
+      - if flash[:notice]
+        #notice.message= flash[:notice]
+      - elsif flash[:warning]
+        #warning.message= flash[:warning]
+   
+   
+    #main
+      = yield
