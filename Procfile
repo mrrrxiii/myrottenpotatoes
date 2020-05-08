@@ -1,0 +1,1 @@
+web: rails server -e config.ru -p $PORT -b $IP
