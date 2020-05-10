@@ -81,3 +81,6 @@ form label {
   font-weight: bold;
   color: maroon;
 }
+#movies .hilite{
+  background-color: yellow;
+}

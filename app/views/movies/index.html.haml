@@ -2,12 +2,21 @@
 
 %h1 All Movies
 
+= form_tag movies_path, :method => :get do
+  Include:
+  - @all_ratings.each do |rating|
+    = rating
+    = check_box_tag "ratings[#{rating}]"
+  = submit_tag 'Refresh'
+  
 %table#movies
   %thead
     %tr
-      %th Movie Title
+      %th
+        %a#title_header{href: movies_path(title: 'title_header'), class: "#{@hilite_title}"} Movie Title
       %th Rating
-      %th Release Date
+      %th
+        %a#release_date_header{href: movies_path(title: 'release_date_header'), class: "#{@hilite_release_date}"} Release Date
       %th More Info
       %th Edit
       %th Delete?
@@ -23,3 +32,4 @@
 
 = link_to 'Add new movie ', new_movie_path        
       
+%p=@test
