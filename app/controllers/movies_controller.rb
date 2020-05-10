@@ -1,7 +1,7 @@
 class MoviesController < ApplicationController
   def index
     @sort=params[:title] || session[:sort]
-    @all_ratings=['G', 'P', 'PG-13','R']
+    @all_ratings=['G', 'P', 'PG-13','R', 'NC-17']
     
     if params[:commit]
       
