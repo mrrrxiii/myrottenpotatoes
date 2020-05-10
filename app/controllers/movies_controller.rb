@@ -23,8 +23,17 @@ class MoviesController < ApplicationController
       
       
     else
-     
-      @selection=session[:filter].keys
+      if session[:filter]
+        @selection=session[:filter].keys
+      else
+        @selection=@all_ratings
+        session.delete(:filter)
+        session[:filter]=Hash.new
+        @all_ratings.each do |x|
+          session[:filter][x]=1
+          
+        end
+      end
     end
     
     
